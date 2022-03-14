@@ -85,14 +85,7 @@
     cursor: pointer;
     align-content: center;
     width: 100%;
-    
-    
-    
-    
-
-
-
-}
+    }
 
 .boton button:hover{
     background-color: darkslategray;
@@ -101,19 +94,19 @@
 }
 
 .boton button{
-    width: 60%;
+    width: 40%;
     border-radius: 1em;
     height: 50px;
     justify-content: center;
+    background-color: whitesmoke;
 }
 a{
     color: darkorange;
-    font-size: 2em;
+    font-size: 1em;
     
 }
-a:hover{
-  color: snow;  
-}
+
+
 
 
 
@@ -138,21 +131,26 @@ a:hover{
             height: 675px;
         }
         
+        
     }
       /*//==========================================================//*/         
-      /*prodcutos*/   
+      /*productos*/   
+      
 .body{
-    height: 1800px;
     margin: 0;
     padding: 0;
-} 
+    display: flex;
+   
+}
+
 .Productos{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 2em;
     width: 60%;
-   margin-left: 150px;
+   margin-left: 0px;
    padding:  150px 0 150px 0;
+   grid-template-columns: repeat(auto-fill, minmax(15rem,1fr));
    
     
 }
@@ -200,7 +198,35 @@ a:hover{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    width: 100%;
+    position: relative;
+   
+
     
    
 
+}
+.background-image a{
+    position: fixed;
+    font-size: 2em;
+    color: dodgerblue;
+}
+
+@media screen and (max-width:320px){
+    .card{
+        width:200px;
+        margin-left: 50px;
+    }
+}
+@media screen and (min-width:320px) and (max-width:375px){
+    .card{
+        width:200px;
+        margin-left: 75px;
+    }
+}
+@media screen and (min-width:375.1px) and (max-width:425px){
+    .card{
+        width:200px;
+        margin-left: 100px;
+    }
 }
