@@ -161,7 +161,7 @@ a{
     border: 3px solid darkorange;
     border-radius: 80px;
     gap: 3em;
-    margin-left: 100px;
+    margin-left: 0px;
     border-radius: 5px darkorange;
     text-align: center;
     background-color: snow;
@@ -266,12 +266,14 @@ a{
 @media screen and (min-width:1440.1px) and (max-width:2560px){
     .card{
         width:200px;
-        margin-left: 500px;
+        margin-left: 0;
     }
     .Productos{
         grid-template-columns: repeat(auto-fill, minmax(13rem,1fr));
-        margin-left: 100px;
+        
         width: 1300px;
+        margin-left: 300px;
+        margin-right: 300px;
     }
     
 }
