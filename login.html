@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .formulario-contenedor {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .formulario-caja {
+            background: white;
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .formulario-caja h2 {
+            margin-bottom: 1em;
+            color: #333;
+        }
+
+        .formulario-caja input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .formulario-caja button {
+            background-color: darksalmon;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .formulario-caja button:hover {
+            background-color: salmon;
+        }
+    </style>
+</head>
+<body>
+    <div class="formulario-contenedor">
+        <div class="formulario-caja">
+            <h2>Iniciar Sesión</h2>
+            <form action="login.php" method="POST">
+                <input type="email" name="email" placeholder="Correo Electrónico" required>
+                <input type="password" name="contrasena" placeholder="Contraseña" required>
+                <button type="submit">Entrar</button>
+            </form>
+            <p>¿No tienes una cuenta? <a href="registros.html">Regístrate aquí</a></p>
+        </div>
+    </div>
+</body>
+</html>
