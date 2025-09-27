@@ -1,9 +1,10 @@
-*{
+* {
     margin: 0;
     padding: 0;
     text-decoration: none;
 }
-:root{
+
+:root {
     --color-fondo-claro: #f8f8f8;
     --color-texto-principal: #333;
     --color-primario: darksalmon;
@@ -11,6 +12,7 @@
     --color-resaltado: #4CAF50;
     --color-borde: #ccc;
 }
+
 .modo-oscuro {
     --color-fondo-claro: #121212;
     --color-texto-principal: #e0e0e0;
@@ -19,35 +21,36 @@
     --color-resaltado: #6e844a;
     --color-borde: #444;
 }
-.home{
+
+.home {
     position: relative;
     display: flex;
     flex-wrap: wrap;
 }
 
-.contenedorgral{
+.contenedorgral {
     height: 100vh;
     width: 100%;
-    
-    
+
+
 }
 
 
-.video video{
+.video video {
     width: 100%;
     height: 100vh;
-   
+
     left: 0;
     top: 0;
-    object-fit:cover ;
-  
-   
+    object-fit: cover;
+
+
 
 
 }
 
-.h1{
-    font-family:'Special Elite', cursive;
+.h1 {
+    font-family: 'Special Elite', cursive;
     position: absolute;
     width: 100%;
     height: 300px;
@@ -57,17 +60,17 @@
     top: 50px;
     text-align: center;
     font-size: 5em;
-    color:var(--color-primario);
+    color: var(--color-primario);
     margin: 20px;
-   
 
-    
+
+
 
 }
 
-.p{
-    
-    
+.p {
+
+
     font-family: 'Shizuru', cursive;
     align-content: center;
     justify-content: center;
@@ -78,7 +81,7 @@
     height: 100px;
     width: 100%;
     padding: 10px;
-    color:var(--color-primario);    
+    color: var(--color-primario);
 }
 
 #boton-tema {
@@ -94,7 +97,23 @@
 #boton-tema:hover {
     background-color: var(--color-secundario);
 }
-   
+
+.boton-compras {
+    padding: 10px 15px;
+    background-color: var(--color-resaltado);
+    /* Puedes usar el mismo color que el botón de Finalizar Compra */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.boton-compras:hover {
+    background-color: #5d925d;
+    /* Un color ligeramente más oscuro al pasar el ratón */
+}
+
 /* Estilos para los botones de registro e inicio de sesión */
 .botones-secundarios {
     position: absolute;
@@ -123,7 +142,7 @@
 
 /* Estilos para el botón del carrito */
 .boton-carrito {
-   
+
     padding: 10px 15px;
     background-color: var(--color-resaltado);
     color: white;
@@ -137,10 +156,11 @@
 .boton-carrito:hover {
     background-color: #45a049;
 }
+
 /* Estilos para el botón del carrito 1*/
 .boton-carrito1 {
 
-    
+
     padding: 10px 15px;
     background-color: var(--color-resaltado);
     color: white;
@@ -157,20 +177,22 @@
 
 /* Estilos para el botón de cerrar sesión */
 .boton-cerrar-sesion {
-    
+
     padding: 10px 15px;
-    background-color: #f44336; /* Color rojo para destacar */
+    background-color: #f44336;
+    /* Color rojo para destacar */
     color: white;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
     transition: background-color 0.3s ease;
-    
+
 }
 
 .boton-cerrar-sesion:hover {
     background-color: #d32f2f;
 }
+
 .boton-ingreso {
     padding: 10px 15px;
     background-color: var(--color-primario);
@@ -179,41 +201,91 @@
     border-radius: 5px;
     font-weight: bold;
     transition: background-color 0.3s ease;
-    
+
 }
 
 .boton-ingreso:hover {
     background-color: var(--color-secundario);
 }
-      /*//==========================================================//*/         
-      /*productos*/   
-      
+
+/* --- Estilos para el botón de Volver a los Productos (en Mis Compras y Carrito) --- */
+
+.boton-volver {
+    /* Apariencia de botón */
+    display: inline-block;
+    /* Permite aplicar padding y ancho */
+    padding: 12px 25px;
+    margin-top: 20px;
+    /* Separación del contenido superior */
+
+    /* Colores y diseño */
+    background-color: var(--color-primario);
+    /* darksalmon en modo claro */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+
+    /* Transición para el efecto hover */
+    transition: background-color 0.3s ease;
+}
+
+.boton-volver:hover {
+    background-color: var(--color-secundario);
+    /* salmon en modo claro */
+}
+
+/* Estilo para centrar el botón en la página Mis Compras si está solo */
+.contenedor-compras a.boton-volver {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    /* Centra el botón horizontalmente */
+}
+
+/*//==========================================================//*/
+/*productos*/
+
 /* Estilos para el encabezado fijo */
+/* Bloque Definitivo para Fijar el Encabezado */
 .header-fijo {
-     position: fixed;
-    top: 0;
+    /* Las tres propiedades CLAVE para fijar el elemento */
+    position: fixed !important;
+    /* Forzar la posición fija */
+    top: 0 !important;
+    /* Pegarlo al borde superior */
     left: 0;
+
+    /* Propiedades de visualización y capas */
     width: 100%;
+    z-index: 10000;
+    /* Asegura que esté por encima de TODO */
+    background-color: #1f1f1f;
+    /* Fondo sólido para cubrir lo de abajo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    /* Estilos de contenido que ya tenías */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    z-index: 1000;
 }
 
 .header-fijo .navbar-brand {
     /* Ajusta los estilos existentes de la marca para que encajen */
-     border: none;
+    border: none;
     border-radius: 0;
     font-size: 1.2em;
     font-weight: bold;
-    color: var(--color-primario); /* Asegura que el color sea visible */
-    display: flex; /* Permite alinear la imagen y el texto */
+    color: var(--color-primario);
+    /* Asegura que el color sea visible */
+    display: flex;
+    /* Permite alinear la imagen y el texto */
     align-items: center;
     gap: 10px;
 }
+
 .header-fijo .navbar-brand img {
     /* Ajusta el tamaño de la imagen */
     width: 40px;
@@ -229,18 +301,19 @@
 }
 
 
-.Productos{
+.Productos {
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(18rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
     gap: 20px;
     width: 100%;
-   margin-top: 50px;
-   padding:  20px;
-  justify-content: center;
-   
-    
+    margin-top: 50px;
+    padding: 20px;
+    justify-content: center;
+
+
 }
-.card{
+
+.card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -253,11 +326,12 @@
     margin-top: 50px;
     border-radius: 5px darkorange;
     text-align: center;
-    background-color: snow;
-    
-   
-    
+    background-color: #1f1f1f;
+
+
+
 }
+
 /* Y añade estilos para el nuevo formulario de carrito dentro de las tarjetas */
 .card_body form {
     display: flex;
@@ -268,7 +342,8 @@
 }
 
 .card_body form input[type="number"] {
-    width: 60px; /* Ajustar el ancho del input de cantidad */
+    width: 60px;
+    /* Ajustar el ancho del input de cantidad */
     padding: 5px;
     text-align: center;
 }
@@ -282,50 +357,56 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
 .card_body form button:hover {
     background-color: #45a049;
 }
-.card img{
-   
+
+.card img {
+
     border-radius: 15px;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
     position: relative;
     top: 20px;
 }
-.card_body h5{
+
+.card_body h5 {
     font-family: 'Shizuru', cursive;
     color: chocolate;
 }
 
 
-.card_body p{
-    color:black;
+.card_body p {
+    color: black;
     top: 0;
-   
+
 }
-.img-fluid{
+.card_body h3{
+    color: #e0e0e0;
+}
+
+.img-fluid {
     z-index: -1;
 }
 
-.background-image{
-    background-image: url('imagen/e2205728eb49a0d4cf66e2f703a55839.jpg');
+.background-image {
+    /*background-image: url('imagen/e2205728eb49a0d4cf66e2f703a55839.jpg');*/
+    background-color: #0d0d0d;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     width: 100%;
     position: relative;
-   
-
-    
-   
-
+     padding-bottom: 100px;
 }
-.background-image a{
+
+.background-image a {
     position: fixed;
     font-size: 2em;
-    
+
 }
+
 /* Estilos para el encabezado de usuario y el carrito */
 .header-usuario {
     position: absolute;
@@ -340,10 +421,11 @@
 .nombre-usuario {
     font-size: 1.2em;
     color: var(--color-primario);
-    
-    
-    
+
+
+
 }
+
 /* Estilos para la página del carrito */
 .contenedor-carrito {
     font-family: Arial, sans-serif;
@@ -351,6 +433,7 @@
     min-height: 100vh;
     padding: 20px;
 }
+
 .titulo-carrito {
     text-align: center;
     color: var(--color-texto-principal);
@@ -364,11 +447,12 @@
     max-width: 900px;
     margin: 0 auto;
     border-collapse: collapse;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: white;
 }
 
-.tabla-carrito th, .tabla-carrito td {
+.tabla-carrito th,
+.tabla-carrito td {
     text-align: left;
     padding: 12px;
     border-bottom: 1px solid #ddd;
@@ -399,7 +483,8 @@
     margin-top: 30px;
 }
 
-.boton-continuar, .boton-finalizar {
+.boton-continuar,
+.boton-finalizar {
     display: inline-block;
     padding: 12px 25px;
     margin: 0 10px;
@@ -423,6 +508,88 @@
     background-color: #45a049;
 }
 
+/* Estilos para las nuevas secciones */
+.seccion-producto {
+    margin-top: 50px;
+    /* Espacio entre las secciones principales */
+    margin-bottom: 50px;
+
+    padding: 0 20px;
+}
+
+.titulo-seccion {
+    text-align: center;
+    color: var(--color-primario);
+    font-family: 'Special Elite', cursive;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    padding-top: 50px;
+}
+
+.subseccion-producto {
+    margin-top: 40px;
+    /* Espacio entre las subsecciones de gato */
+    margin-bottom: 20px;
+}
+
+.titulo-subseccion {
+    text-align: center;
+    color: #e0e0e0;         /*var(--color-texto-principal)*/
+    font-family: 'Shizuru', cursive;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+/* --- Estilos para la Notificación de Carrito --- */
+.notificacion-carrito {
+    position: fixed;
+    bottom: 20px;
+    /* Posición inferior */
+    right: 20px;
+    /* Posición derecha */
+    background-color: var(--color-resaltado);
+    /* Usando el color de éxito */
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 99999;
+    /* Asegura que esté por encima de todo */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.notificacion-carrito.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#producto-preview {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.preview-img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+#mensaje-carrito {
+    font-size: 1.1em;
+}
+
 /* Estilos responsivos para pantallas pequeñas */
 @media screen and (max-width: 600px) {
     .tabla-carrito {
@@ -430,6 +597,7 @@
         overflow-x: auto;
         display: block;
     }
+
     .botones-acciones {
         display: flex;
         flex-direction: column;
@@ -440,7 +608,7 @@
 
 /* Media Query para la responsividad del header */
 @media screen and (max-width: 600px) {
-    
+
 
     .header-fijo .header-usuario {
         flex-direction: column;
@@ -448,46 +616,71 @@
         gap: 10px;
         margin-top: 10px;
     }
-    
+
     .Productos {
-        margin-top: 160px; /* Aumenta el margen para acomodar el header en móviles */
+        margin-top: 160px;
+        /* Aumenta el margen para acomodar el header en móviles */
     }
 }
 
 
 /* Media Query para la responsividad de todo el header */
 @media screen and (max-width: 768px) {
-    
+
     .header-fijo .header-usuario {
-        flex-direction: column; /* Apila los botones verticalmente */
+        flex-direction: column;
+        /* Apila los botones verticalmente */
         align-items: center;
         gap: 10px;
         margin-top: 10px;
     }
+
     .Productos {
-        margin-top: 160px; /* Aumenta el margen para acomodar el header en móviles */
+        margin-top: 160px;
+        /* Aumenta el margen para acomodar el header en móviles */
+    }
+
+    /* Aumenta el margen superior para que quepa el header apilado */
+    .seccion-producto {
+        margin-top: 180px;
+        /* Un valor más grande para dejar espacio al header fijo */
     }
 }
-@media screen and (min-width:300px) and (max-width:1200px){
-    
-        .h1{
-            font-size: 2em;
-            padding: 0;
-            margin: 0;
-            top: 100px;
-        }
-        .p{
-            font-size: 2em;
-            right: 0;
-            
-        }
-        .boton{
-            font-size: 2em;
-           
-        }
-        .video{
-            height: 675px;
-        }
-        
-        
+
+@media screen and (min-width:300px) and (max-width:1200px) {
+
+    .h1 {
+        font-size: 2em;
+        padding: 0;
+        margin: 0;
+        top: 100px;
     }
+
+    .p {
+        font-size: 2em;
+        right: 0;
+
+    }
+
+    .boton {
+        font-size: 2em;
+
+    }
+
+    .video {
+        height: 675px;
+    }
+
+    .seccion-producto {
+        margin-top: 50px;
+        /* Un valor más grande para dejar espacio al header fijo */
+    }
+
+    .titulo-seccion {
+
+        padding-top: 100px;
+    }
+    .background-image {
+        padding-bottom: 100px;
+    }
+}

@@ -48,10 +48,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Cerrar la sentencia y la conexión
     $sentencia_verificar->close();
     $conn->close();
-
-    echo "¡Producto agregado al carrito con éxito!";
-    // Redirigir de vuelta a la página de productos
-    header("Location: Productos.html");
-    exit();
 }
+   echo "Producto agregado exitosamente."; // Este mensaje es el que recibe el AJAX
+exit();
+
 ?>

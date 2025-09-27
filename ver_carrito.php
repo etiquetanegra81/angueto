@@ -15,7 +15,7 @@ $id_del_usuario = $_SESSION['id_usuario'];
 
 // Preparar la consulta SQL para obtener los productos del carrito del usuario
 // Usamos un JOIN para obtener los datos de los productos de la tabla `productos`
-$sql_obtener_carrito = "SELECT p.nombre, p.marca, p.precio, c.cantidad FROM carrito c JOIN productos p ON c.id_producto = p.id WHERE c.id_usuario = ?";
+$sql_obtener_carrito = "SELECT p.nombre, p.marca, p.precio, c.cantidad, c.id_producto FROM carrito c JOIN productos p ON c.id_producto = p.id WHERE c.id_usuario = ?";
 $sentencia_carrito = $conn->prepare($sql_obtener_carrito);
 $sentencia_carrito->bind_param("i", $id_del_usuario);
 $sentencia_carrito->execute();
@@ -39,6 +39,7 @@ $resultado_carrito = $sentencia_carrito->get_result();
                 <th>Precio</th>
                 <th>Cantidad</th>
                 <th>Subtotal</th>
+                 <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -54,6 +55,12 @@ $resultado_carrito = $sentencia_carrito->get_result();
                 echo "<td>$" . number_format($fila['precio'], 2) . "</td>";
                 echo "<td>" . htmlspecialchars($fila['cantidad']) . "</td>";
                 echo "<td>$" . number_format($subtotal, 2) . "</td>";
+                echo "<td>"; // Nueva celda
+                echo "<form action='eliminar_carrito.php' method='post'>";
+                echo "<input type='hidden' name='id_producto' value='" . $fila['id_producto'] . "'>";
+                echo "<button type='submit' class='boton-eliminar'>Eliminar</button>";
+                echo "</form>";
+                echo "</td>";
                 echo "</tr>";
             }
             ?>
